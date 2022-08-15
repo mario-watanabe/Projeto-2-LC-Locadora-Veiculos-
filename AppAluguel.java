@@ -1,10 +1,11 @@
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
 public class AppAluguel {
     public static void main(String[] args) {
-        double valorAluguel;
-        double valorDaDiaria;
+        BigDecimal valorAluguel;
+        BigDecimal valorDaDiaria;
         String clientePF = "PF";
         String clientePJ = "PJ";
         Veiculo tipoPequeno = Veiculo.PEQUENO;

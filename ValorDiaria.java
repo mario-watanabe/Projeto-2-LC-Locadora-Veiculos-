@@ -1,6 +1,8 @@
+import java.math.BigDecimal;
+
 public class ValorDiaria extends Cliente {
    Veiculo tipoVeiculo;
-   double valorDiaria;
+   BigDecimal valorDiaria;
    String tipoCliente;
    int quantidadeDeDias;
 
@@ -8,7 +10,7 @@ public class ValorDiaria extends Cliente {
 
    public ValorDiaria(String tipoVeiculo){}
 
-   public double valorDiaria (Veiculo tipoVeiculo, String tipoCliente, int quantidadeDeDias) {
+   public BigDecimal valorDiaria (Veiculo tipoVeiculo, String tipoCliente, int quantidadeDeDias) {
       this.tipoVeiculo = tipoVeiculo;
       this.tipoCliente = tipoCliente;
       this.quantidadeDeDias = quantidadeDeDias;
@@ -18,23 +20,23 @@ public class ValorDiaria extends Cliente {
          switch (tipoVeiculo) {
          case PEQUENO:
          if (quantidadeDeDias > 5) {
-            valorDiaria = 95.00;
+            valorDiaria = new BigDecimal(95.00);
          }  else { 
-            valorDiaria = 100.00;
+            valorDiaria = new BigDecimal(100.00);
          }
          break;
          case MEDIO:
          if (quantidadeDeDias > 5) {
-            valorDiaria = 142.50;
+            valorDiaria = new BigDecimal(142.50);
          }  else { 
-            valorDiaria = 150.00;
+            valorDiaria = new BigDecimal(150.00);
          }
          break;
          case SUV:
          if (quantidadeDeDias > 5) {
-            valorDiaria = 190.00;
+            valorDiaria = new BigDecimal(190.00);
          }  else { 
-            valorDiaria = 200.00;
+            valorDiaria = new BigDecimal(200.00);
          }
          break;
          default: 
@@ -46,23 +48,23 @@ public class ValorDiaria extends Cliente {
           switch (tipoVeiculo) {
           case PEQUENO:
             if (quantidadeDeDias > 3) {
-              valorDiaria = 90.00;
+              valorDiaria = new BigDecimal(90.00);
             }  else { 
-              valorDiaria = 100.00;
+              valorDiaria = new BigDecimal(100.00);
             }
             break;
           case MEDIO:
             if (quantidadeDeDias > 3) {
-              valorDiaria = 135.00;
+              valorDiaria = new BigDecimal(135.00);
             }  else { 
-              valorDiaria = 150.00;
+              valorDiaria = new BigDecimal(150.00);
             }
             break;
           case SUV:
             if (quantidadeDeDias > 3) {
-              valorDiaria = 180.00;
+              valorDiaria = new BigDecimal(180.00);
             }  else { 
-              valorDiaria = 200.00;
+              valorDiaria = new BigDecimal(200.00);
             }
             break;
           default:

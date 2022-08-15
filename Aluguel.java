@@ -5,24 +5,33 @@ public class Aluguel extends Cliente {
     String nome;
     int quantidadeDeDias;
     BigDecimal valorDaDiaria;
+    double taxaDesconto;
     
     public Aluguel() { }
 
-    public Aluguel(Veiculo veiculo, String tipoCliente, int quantidadeDeDias, BigDecimal valorDaDiaria) {
+    public Aluguel(Veiculo veiculo, String tipoCliente, int quantidadeDeDias, BigDecimal valorDaDiaria, double taxaDesconto) {
         this.veiculo = veiculo;
         this.tipoCliente = tipoCliente;
         this.quantidadeDeDias = quantidadeDeDias;
         this.valorDaDiaria = valorDaDiaria;
+        this.taxaDesconto = taxaDesconto;
     }
 
-    public BigDecimal calcularValorAluguel(Veiculo veiculo, String tipoCliente, int quantidadeDeDias, BigDecimal valorDaDiaria) {
+    public BigDecimal calcularValorAluguel(Veiculo veiculo, String tipoCliente, int quantidadeDeDias, BigDecimal valorDaDiaria, double taxaDesconto) {
         this.veiculo = veiculo;
         this.tipoCliente = tipoCliente;
         this.quantidadeDeDias = quantidadeDeDias;
         this.valorDaDiaria = valorDaDiaria;
+        this.taxaDesconto = taxaDesconto;
         BigDecimal valorAluguel;
+
+        BigDecimal taxa = new BigDecimal(taxaDesconto/100); 
+
+        BigDecimal desconto = this.valorDaDiaria.multiply(taxa);
+        BigDecimal diaria = valorDaDiaria.subtract(desconto);
  
-        valorAluguel = new BigDecimal(this.quantidadeDeDias).multiply(valorDaDiaria);
+        valorAluguel = new BigDecimal(this.quantidadeDeDias).multiply(diaria);
+
         return valorAluguel;
 
     }

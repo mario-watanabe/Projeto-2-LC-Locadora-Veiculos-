@@ -6,6 +6,7 @@ public class AppAluguel {
     public static void main(String[] args) {
         BigDecimal valorAluguel;
         BigDecimal valorDaDiaria;
+        Double taxaDesconto;
         String clientePF = "PF";
         String clientePJ = "PJ";
         Veiculo tipoPequeno = Veiculo.PEQUENO;
@@ -18,9 +19,11 @@ public class AppAluguel {
 
         // PEQUENO, PF, 1 DIA
         ValorDiaria val1 = new ValorDiaria();
-        valorDaDiaria = val1.valorDiaria(tipoPequeno, clientePF, quantidadeDias1);
+        Desconto desconto1 = new Desconto();
+        taxaDesconto = desconto1.taxaDesconto(clientePF, quantidadeDias1);
+        valorDaDiaria = val1.valorDiaria(tipoPequeno);
         Aluguel valor1 = new Aluguel(); 
-        valorAluguel = valor1.calcularValorAluguel(tipoPequeno, clientePF, quantidadeDias1, valorDaDiaria);
+        valorAluguel = valor1.calcularValorAluguel(tipoPequeno, clientePF, quantidadeDias1, valorDaDiaria, taxaDesconto);
 
         Locale moedaBrasil = new Locale("pt", "BR");
         var valorConvertido = NumberFormat.getCurrencyInstance(moedaBrasil).format(valorAluguel);
@@ -32,9 +35,11 @@ public class AppAluguel {
 
         // MEDIO  , PF, 6 DIAS
         ValorDiaria val2 = new ValorDiaria();
-        valorDaDiaria = val2.valorDiaria(tipoMedio, clientePF, quantidadeDias6);
+        Desconto desconto2 = new Desconto();
+        taxaDesconto = desconto2.taxaDesconto(clientePF, quantidadeDias6);
+        valorDaDiaria = val2.valorDiaria(tipoMedio);
         Aluguel valor2 = new Aluguel(); 
-        valorAluguel = valor2.calcularValorAluguel(tipoMedio, clientePF, quantidadeDias6, valorDaDiaria);
+        valorAluguel = valor2.calcularValorAluguel(tipoMedio, clientePF, quantidadeDias6, valorDaDiaria, taxaDesconto);
 
         valorConvertido = NumberFormat.getCurrencyInstance(moedaBrasil).format(valorAluguel);
 
@@ -45,9 +50,11 @@ public class AppAluguel {
  
         // SUV    , PJ, 1 DIA
         ValorDiaria val3 = new ValorDiaria();
-        valorDaDiaria = val3.valorDiaria(tipoSUV, clientePJ, quantidadeDias1);
+        Desconto desconto3 = new Desconto();
+        taxaDesconto = desconto3.taxaDesconto(clientePJ, quantidadeDias1);
+        valorDaDiaria = val3.valorDiaria(tipoSUV);
         Aluguel valor3 = new Aluguel(); 
-        valorAluguel = valor3.calcularValorAluguel(tipoSUV, clientePJ, quantidadeDias1, valorDaDiaria);
+        valorAluguel = valor3.calcularValorAluguel(tipoSUV, clientePJ, quantidadeDias1, valorDaDiaria, taxaDesconto);
     
         valorConvertido = NumberFormat.getCurrencyInstance(moedaBrasil).format(valorAluguel);
     
@@ -58,9 +65,11 @@ public class AppAluguel {
  
         // MEDIO  , PJ, 6 DIAS 
         ValorDiaria val4 = new ValorDiaria();
-        valorDaDiaria = val4.valorDiaria(tipoMedio, clientePJ, quantidadeDias6);
+        Desconto desconto4 = new Desconto();
+        taxaDesconto = desconto4.taxaDesconto(clientePJ, quantidadeDias6);
+        valorDaDiaria = val4.valorDiaria(tipoMedio);
         Aluguel valor4 = new Aluguel(); 
-        valorAluguel = valor4.calcularValorAluguel(tipoMedio, clientePJ, quantidadeDias6, valorDaDiaria);
+        valorAluguel = valor4.calcularValorAluguel(tipoMedio, clientePJ, quantidadeDias6, valorDaDiaria, taxaDesconto);
     
         valorConvertido = NumberFormat.getCurrencyInstance(moedaBrasil).format(valorAluguel);
 

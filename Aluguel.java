@@ -1,29 +1,23 @@
 import java.math.BigDecimal;
 
 public class Aluguel extends Cliente {
-    Veiculo veiculo;
-    String nome;
-    int quantidadeDeDias;
-    BigDecimal valorDaDiaria;
+    private Veiculo veiculo;
+    private String nome;
+    private int quantidadeDeDias;
+    private BigDecimal valorDaDiaria;
     double taxaDesconto;
     
     public Aluguel() { }
 
     public Aluguel(Veiculo veiculo, String tipoCliente, int quantidadeDeDias, BigDecimal valorDaDiaria, double taxaDesconto) {
-        this.veiculo = veiculo;
-        this.tipoCliente = tipoCliente;
-        this.quantidadeDeDias = quantidadeDeDias;
-        this.valorDaDiaria = valorDaDiaria;
-        this.taxaDesconto = taxaDesconto;
     }
 
     public BigDecimal calcularValorAluguel(Veiculo veiculo, String tipoCliente, int quantidadeDeDias, BigDecimal valorDaDiaria, double taxaDesconto) {
         this.veiculo = veiculo;
-        this.tipoCliente = tipoCliente;
         this.quantidadeDeDias = quantidadeDeDias;
         this.valorDaDiaria = valorDaDiaria;
         this.taxaDesconto = taxaDesconto;
-        BigDecimal valorAluguel;
+        final BigDecimal valorAluguel;
 
         BigDecimal taxa = new BigDecimal(taxaDesconto/100); 
 

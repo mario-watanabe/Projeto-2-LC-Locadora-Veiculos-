@@ -1,6 +1,6 @@
 public class PessoaFisica extends Cliente {
-    String nome;
-    String tipoCliente = "PF";
+    private String nome;
+    final String tipoCliente = "PF";
     
     public PessoaFisica(String nome) {
         this.nome = nome;

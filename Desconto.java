@@ -1,6 +1,6 @@
 public class Desconto {
-    String tipoCliente;
-    int quantidadeDeDias;
+    private String tipoCliente;
+    private int quantidadeDeDias;
 
     public Desconto() {}
 
@@ -21,5 +21,3 @@ public class Desconto {
     }  
         
 }
-    
-

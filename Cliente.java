@@ -1,6 +1,6 @@
 public class Cliente {
-    String nome;
-    String tipoCliente;
+    private String nome;
+    private String tipoCliente;
 
     public String getTipoCliente() {
         return tipoCliente;
